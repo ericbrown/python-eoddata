@@ -146,6 +146,12 @@ class Client(object):
         processor = lambda obj: list_to_dictify(obj.FUNDAMENTALS.FUNDAMENTAL,
                                                 'symbol')
         return self._result(method, processor, Exchange=exchange)
+    
+    @require_login
+    def splits(self, exchange):
+        method = 'SplitListByExchange'
+        processor = lambda obj: list_to_dictify(obj.SPLITS.SPLIT, 'symbol')
+        return self._result(method, processor, Exchange=exchange)
 
     @require_login
     def quote(self, exchange, symbol):
