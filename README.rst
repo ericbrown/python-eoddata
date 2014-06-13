@@ -21,3 +21,8 @@ Usage
 
     for symbol, quote in client.quotes('NASDAQ'):
         print symbol, quote['close']
+
+Changes from original
+=====================
+
+Added the SplitByExchangeList method - June 13 2014
